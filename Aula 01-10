@@ -1,0 +1,9 @@
+#Problema: dificuldades em encontrar o valor minimo da função rosen
+#Alternativa: heurísticas ou metaheurísticas não determministicas. Por exemplo, o metod evolução diferencia
+from scipy.optimize import differencial_evolution
+def rosen(x):
+	return sum(100*(x[1: ]-x[:-1]**2)**2+(1-x[:-1])**2)
+limites=[(-1000,1000),(-1000,1000),(-1000,1000),(-1000,1000)]
+resultado = differential_evolution(rosen,limites)
+print(resultado.x)
+print(resultado.fun)
